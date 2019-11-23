@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
 import { NoteComponent } from './notes/note/note.component';
 import { MyMaterialModule } from  './material.module';
+import { EditNoteComponent } from './edit-note/edit-note.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotesComponent,
-    NoteComponent
+    NoteComponent,
+    EditNoteComponent,
+    CreateNoteComponent
   ],
   imports: [
     BrowserModule,
