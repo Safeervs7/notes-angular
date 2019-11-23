@@ -8,6 +8,7 @@ import { NoteComponent } from './notes/note/note.component';
 import { MyMaterialModule } from  './material.module';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
+import { DeleteNoteComponent } from './delete-note/delete-note.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CreateNoteComponent } from './create-note/create-note.component';
     NotesComponent,
     NoteComponent,
     EditNoteComponent,
-    CreateNoteComponent
+    CreateNoteComponent,
+    DeleteNoteComponent
   ],
   imports: [
     BrowserModule,
