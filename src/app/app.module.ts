@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotesComponent } from './notes/notes.component';
 import { NoteComponent } from './notes/note/note.component';
+import { MyMaterialModule } from  './material.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NoteComponent } from './notes/note/note.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MyMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
