@@ -1,7 +1,9 @@
 <mat-card class="example-card">
     <mat-card-content>
         <form #note="ngForm" (ngSubmit)="createNote(note)" class="example-form">
-            <textarea name="note" ngModel class="form-control" placeholder="Create new note" value=""></textarea>
+            <textarea name="createNote" ngModel class="form-control" placeholder="Create new note" value=""></textarea>
+            <input class="form-control input-round" [(colorPicker)]="color" [style.background]="color" [style.color]="color"/>
+            <input hidden name="colorValue" [(ngModel)]="color" />
             <button class="btn btn-small btn-success">Create</button>
         </form>
     </mat-card-content>

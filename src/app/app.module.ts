@@ -11,6 +11,7 @@ import { EditNoteComponent } from './edit-note/edit-note.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
 import { DeleteNoteComponent } from './delete-note/delete-note.component';
 import { FormsModule }   from '@angular/forms';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormsModule }   from '@angular/forms';
     MyMaterialModule,
     BrowserAnimationsModule,
     AlertModule.forRoot(),
-    FormsModule
+    FormsModule,
+    ColorPickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

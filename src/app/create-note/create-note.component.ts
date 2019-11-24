@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -7,8 +7,10 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./create-note.component.css']
 })
 export class CreateNoteComponent implements OnInit {
-
-  constructor() { }
+  color: string;
+  constructor() { 
+    this.color = 'red';
+  }
 
   ngOnInit() {
   }
