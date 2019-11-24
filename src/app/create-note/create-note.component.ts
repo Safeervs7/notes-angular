@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import NotesService from '../services/notes.service';
 
 @Component({
   selector: 'app-create-note',
@@ -8,7 +9,7 @@ import {NgForm} from '@angular/forms';
 })
 export class CreateNoteComponent implements OnInit {
   color: string;
-  constructor() { 
+  constructor(private notesService: NotesService) { 
     this.color = 'red';
   }
 
@@ -16,7 +17,7 @@ export class CreateNoteComponent implements OnInit {
   }
 
   createNote(note: NgForm) {
-    console.log(note.value);
+    this.notesService.createNote(note.value);
   }
 
 }

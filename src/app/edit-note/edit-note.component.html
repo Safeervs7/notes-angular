@@ -1,1 +1,10 @@
-<p>edit-note works!</p>
+<mat-card class="example-card">
+    <mat-card-content>
+        <form #noteForm="ngForm" (ngSubmit)="updateNote(noteForm)" class="example-form">
+            <textarea name="updateNote" [(ngModel)]="note" class="form-control" placeholder="" ></textarea>
+            <input class="form-control input-round" [(colorPicker)]="color" [style.background]="color" [style.color]="color"/>
+            <input hidden name="colorValue" [(ngModel)]="color" />
+            <button class="btn btn-small btn-success">Update</button>
+        </form>
+    </mat-card-content>
+</mat-card>

@@ -1,1 +1,1 @@
-<app-note *ngFor="let noteDetails of noteDetailsArray" [noteDetails]=noteDetails></app-note>
+<app-note *ngFor="let noteDetails of noteDetailsArray; let index = index;" [noteDetails]=noteDetails [index]=index></app-note>
