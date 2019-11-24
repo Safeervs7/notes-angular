@@ -10,6 +10,7 @@ import { MyMaterialModule } from  './material.module';
 import { EditNoteComponent } from './edit-note/edit-note.component';
 import { CreateNoteComponent } from './create-note/create-note.component';
 import { DeleteNoteComponent } from './delete-note/delete-note.component';
+import { LayoutComponent } from './layout/layout.component';
 import { FormsModule }   from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
 
@@ -20,7 +21,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
     NoteComponent,
     EditNoteComponent,
     CreateNoteComponent,
-    DeleteNoteComponent
+    DeleteNoteComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

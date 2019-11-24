@@ -1,0 +1,30 @@
+.mat-toolbar.mat-primary {
+    background: #fff;
+    color: #000;
+    box-shadow: 1px 1px #f1f3f4;
+    margin-bottom: 5px;
+}
+
+
+.example-container{
+    min-height: -moz-calc(100% - 70px); /* Firefox */
+    min-height: -webkit-calc(100% - 70px); /* Chrome, Safari */
+    min-height: calc(100% - 70px); /* IE9+ and future browsers */
+}
+
+.nav-header{
+    height: 50px;
+}
+
+.mat-drawer-container {
+    background-color: #fff;
+}
+
+.mat-drawer-content {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.banner-note{
+    margin: 0 5px;
+}

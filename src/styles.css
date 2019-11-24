@@ -4,3 +4,7 @@
 html, body { 
     height: 100%;
 }
+
+.form-control{
+    background-color: #f1f3f475;
+}

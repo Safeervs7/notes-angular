@@ -1,1 +1,5 @@
-<app-note *ngFor="let noteDetails of noteDetailsArray; let index = index;" [noteDetails]=noteDetails [index]=index></app-note>
+<div class="card-wrapper">
+    <div class="row cards">
+        <app-note *ngFor="let noteDetails of noteDetailsArray; let index = index;" [noteDetails]=noteDetails [index]=index></app-note>
+    </div>
+</div>

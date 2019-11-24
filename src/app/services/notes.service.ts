@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export default class NotesService {
-  notes:any = require('../../data/notes.json');
+  notes:any = [{"note":"note 1", "color":"red"},{"note":"note 1", "color":"red"},{"note":"note 1", "color":"red"},{"note":"note 1", "color":"red"},{"note":"note 1", "color":"red"},{"note":"note 1", "color":"red"},];
   constructor(private router: Router) { }
 
   getNotes(){

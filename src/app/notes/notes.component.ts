@@ -15,4 +15,6 @@ export class NotesComponent implements OnInit {
     this.noteDetailsArray = this.notesService.getNotes();
   }
 
+  
+
 }
