@@ -13,6 +13,7 @@ import { DeleteNoteComponent } from './delete-note/delete-note.component';
 import { LayoutComponent } from './layout/layout.component';
 import { FormsModule }   from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ColorPickerModule } from 'ngx-color-picker';
     BrowserAnimationsModule,
     AlertModule.forRoot(),
     FormsModule,
-    ColorPickerModule
+    ColorPickerModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

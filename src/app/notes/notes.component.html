@@ -1,5 +1,7 @@
 <div class="card-wrapper">
     <div class="row cards">
-        <app-note *ngFor="let noteDetails of noteDetailsArray; let index = index;" [noteDetails]=noteDetails [index]=index></app-note>
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+            <app-note cdkDrag class="example-box" *ngFor="let noteDetails of noteDetailsArray; let index = index;" [noteDetails]=noteDetails [index]=index></app-note>
+        </div>
     </div>
 </div>
