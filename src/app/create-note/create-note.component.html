@@ -1,1 +1,8 @@
-<p>create-note works!</p>
+<mat-card class="example-card">
+    <mat-card-content>
+        <form #note="ngForm" (ngSubmit)="createNote(note)" class="example-form">
+            <textarea name="note" ngModel class="form-control" placeholder="Create new note" value=""></textarea>
+            <button class="btn btn-small btn-success">Create</button>
+        </form>
+    </mat-card-content>
+</mat-card>
