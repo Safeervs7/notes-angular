@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import NotesService from '../services/notes.service';
 
 @Component({
   selector: 'app-layout',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
-  constructor() { }
+  categroies: { categoryName: string, notes: number[] }[] = [];
+  constructor( private notesService: NotesService ) { }
 
   ngOnInit() {
+    this.categroies = this.notesService.getCategories();
   }
 
 }

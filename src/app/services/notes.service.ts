@@ -5,13 +5,31 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export default class NotesService {
-  notes:any = [{"note":"note 1", "color":"red"},{"note":"note 2", "color":"red"},{"note":"note 3", "color":"red"},
+  notes:{ color: string, note: string }[] = [{"note":"note 1", "color":"red"},{"note":"note 2", "color":"red"},{"note":"note 3", "color":"red"},
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},];
+  categroies: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [1, 2, 3]}, {categoryName: "category2", notes: [5, 6, 7]}];
   constructor(private router: Router) { }
 
-  getNotes(){
-    return this.notes;
+  getCategories(){
+    return this.categroies;
+  }
+
+  getNotes(id){
+    if(!id){
+      return this.notes;
+    }
+    else{
+      let notes = [];
+      if(this.categroies[id]){
+        for(let element of this.categroies[id].notes){
+          if(this.notes[element]){
+            notes.push(this.notes[element]);
+          }
+        }
+      }
+      return notes;
+    }
   }
 
   getNote(id){

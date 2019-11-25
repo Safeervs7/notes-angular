@@ -10,8 +10,7 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav #drawer mode="side" opened role="navigation">
         <mat-nav-list>
-        <a mat-list-item routerLink='/create'>Create</a>
-        <a mat-list-item routerLink='/second'>Second Component</a>
+            <a *ngFor="let category of categroies; let index = index;" mat-list-item routerLink='/category-details/{{index}}'>{{category.categoryName}}</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
