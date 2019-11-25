@@ -25,6 +25,12 @@ export default class NotesService {
   }
 
   getNotes(id){
+    if(id){
+      this.categoryId = id;
+    }
+    else{
+      this.categoryId = null;
+    }
     return this.notes;
   }
 
