@@ -28,3 +28,7 @@
 .banner-note{
     margin: 0 5px;
 }
+
+.active-link, .active-link:focus{
+    background-color: #ffc10724;
+}
