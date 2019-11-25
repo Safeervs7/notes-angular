@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 export default class NotesService {
   notes:{ color: string, note: string }[] = [{"note":"note 1", "color":"red"},{"note":"note 2", "color":"red"},{"note":"note 3", "color":"red"},
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},];
-  categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [4, 5, 6]}];
+  categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [3, 4, 5]}];
   notesOrder: number[] = [...this.range(0, this.notes.length - 1)];
   categoryId: string;
   constructor(private router: Router) { }
@@ -61,7 +61,6 @@ export default class NotesService {
   }
 
   createNote(data){
-    console.log(this.categoryId);
     if(this.categories[this.categoryId]){
       this.categories[this.categoryId].notes.push(this.notes.length);
     }

@@ -32,3 +32,11 @@
 .active-link, .active-link:focus{
     background-color: #ffc10724;
 }
+
+.mat-drawer-content.mat-sidenav-content{
+    margin-left: 15vw!important;
+}
+
+.mat-drawer.mat-drawer-side {
+    width: 15vw;
+}
