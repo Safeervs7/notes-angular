@@ -33,7 +33,6 @@ export class NotesComponent implements OnInit {
     }
   }
 
-
   drop(event: CdkDragDrop<any[]>) {
     if(this.categoryId){
       if(this.categories[this.categoryId]){

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import NotesService from '../../services/notes.service';
 
 @Component({
   selector: 'app-note',
@@ -8,11 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NoteComponent implements OnInit {
   @Input() noteDetails: Object;
   @Input() index: any;
-  public deleteEvent: Function;
-  constructor() { 
+  constructor(private notesService: NotesService) { 
   }
 
   ngOnInit() {
+  }
+
+  invokeDeleteEvent(id){
+    this.notesService.deleteNoteByIndex(id);
   }
 
 }
