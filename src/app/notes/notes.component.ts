@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class NotesComponent implements OnInit {
   noteDetailsArray: { color: string, note: string }[] = [];
+  noteDetailsOrder: number[];
   categoryId: string;
   categories: { categoryName: string, notes: number[] }[] = [];
   constructor(private router: Router, private route: ActivatedRoute, private notesService: NotesService) { 
@@ -23,20 +24,25 @@ export class NotesComponent implements OnInit {
     });
     this.noteDetailsArray = this.notesService.getNotes(this.categoryId);
     this.categories = this.notesService.getCategories();
+
+    if(this.categoryId){
+      this.noteDetailsOrder = this.categories[this.categoryId].notes;
+    }
+    else{
+      this.noteDetailsOrder = this.notesService.getNotesOrder();
+    }
   }
 
 
   drop(event: CdkDragDrop<any[]>) {
     if(this.categoryId){
-      console.log(this.categoryId);
-      console.log(this.categories[this.categoryId].notes);
       if(this.categories[this.categoryId]){
         moveItemInArray(this.categories[this.categoryId].notes, event.previousIndex, event.currentIndex);
         this.noteDetailsArray = this.notesService.getNotes(this.categoryId);
       }
     }
     else{
-      moveItemInArray(this.noteDetailsArray, event.previousIndex, event.currentIndex);
+      moveItemInArray(this.noteDetailsOrder, event.previousIndex, event.currentIndex);
     }
   }
 

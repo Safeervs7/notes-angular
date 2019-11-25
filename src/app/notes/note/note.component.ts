@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NoteComponent implements OnInit {
   @Input() noteDetails: Object;
   @Input() index: any;
+  public deleteEvent: Function;
   constructor() { 
   }
 

@@ -9,6 +9,7 @@ export default class NotesService {
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},];
   categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [5, 6, 7]}];
+  notesOrder: number[] = [...this.range(0, this.notes.length - 1)];
   categoryId: string;
   constructor(private router: Router) { }
 
@@ -16,7 +17,17 @@ export default class NotesService {
     return this.categories;
   }
 
+  getNotesOrder(){
+    return this.notesOrder;
+  }
+
+  range(start, end) {
+    return (new Array(end - start + 1)).fill(undefined).map((_, i) => i + start);
+  }
+
   getNotes(id){
+    return this.notes;
+
     if(!id){
       return this.notes;
     }

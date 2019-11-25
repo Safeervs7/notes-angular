@@ -1,10 +1,12 @@
 <mat-card class="example-card">
     <mat-card-content>
-        <form #note="ngForm" (ngSubmit)="createNote(note)" class="example-form">
-            <textarea name="createNote" ngModel class="form-control" placeholder="Create new note" value=""></textarea>
-            <input class="form-control input-round" [(colorPicker)]="color" [style.background]="color" [style.color]="color"/>
-            <input hidden name="colorValue" [(ngModel)]="color" />
-            <button class="btn btn-small btn-success">Create</button>
+        <form #noteForm="ngForm" (ngSubmit)="createNote(noteForm)" class="example-form">
+            <textarea autofocus name="createNote" ngModel class="form-control" placeholder="Create new note" value=""></textarea>
+            <div class="form-group">
+                <input class="form-control input-round" [(colorPicker)]="color" [style.background]="color" [style.color]="color"/>
+                <input hidden name="colorValue" [(ngModel)]="color" />
+                <button class="btn btn-small btn-success">Create</button>
+            </div>
         </form>
     </mat-card-content>
 </mat-card>
