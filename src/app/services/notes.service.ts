@@ -8,11 +8,12 @@ export default class NotesService {
   notes:{ color: string, note: string }[] = [{"note":"note 1", "color":"red"},{"note":"note 2", "color":"red"},{"note":"note 3", "color":"red"},
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},];
-  categroies: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [1, 2, 3]}, {categoryName: "category2", notes: [5, 6, 7]}];
+  categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [5, 6, 7]}];
+  categoryId: string;
   constructor(private router: Router) { }
 
   getCategories(){
-    return this.categroies;
+    return this.categories;
   }
 
   getNotes(id){
@@ -20,9 +21,10 @@ export default class NotesService {
       return this.notes;
     }
     else{
+      this.categoryId = id;
       let notes = [];
-      if(this.categroies[id]){
-        for(let element of this.categroies[id].notes){
+      if(this.categories[id]){
+        for(let element of this.categories[id].notes){
           if(this.notes[element]){
             notes.push(this.notes[element]);
           }
@@ -39,6 +41,9 @@ export default class NotesService {
   }
 
   createNote(data){
+    if(this.categories[this.categoryId]){
+      this.categories[this.categoryId].notes.push(this.notes.length);
+    }
     this.notes.push({color: data.colorValue, note: data.createNote});
     this.router.navigate(['']);
   }
