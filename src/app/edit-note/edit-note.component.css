@@ -25,3 +25,7 @@ height: -moz-calc(100% - 100px); /* Firefox */
 height: -webkit-calc(100% - 100px); /* Chrome, Safari */
 height: calc(100% - 100px); /* IE9+ and future browsers */
 }
+
+textarea.form-control {
+    background-color: white;
+}

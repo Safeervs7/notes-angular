@@ -10,7 +10,7 @@ import NotesService from '../services/notes.service';
 export class CreateNoteComponent implements OnInit {
   color: string;
   constructor(private notesService: NotesService) { 
-    this.color = 'red';
+    this.color = '#fff4dc';
   }
 
   ngOnInit() {

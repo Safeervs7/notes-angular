@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export default class NotesService {
-  notes:{ color: string, note: string }[] = [{"note":"note 1", "color":"red"},{"note":"note 2", "color":"red"},{"note":"note 3", "color":"red"},
-              {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},];
+  notes:{ color: string, note: string }[] = [{"note":"note 1", "color":"#fff4dc"},{"note":"note 2", "color":"#fff4dc"},{"note":"note 3", "color":"#fff4dc"},
+              {"note":"note 4", "color":"#fff4dc"},{"note":"note 5", "color":"#fff4dc"},{"note":"note 6", "color":"#fff4dc"},];
   categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [3, 4, 5]}];
   notesOrder: number[] = [...this.range(0, this.notes.length - 1)];
   searchValue: string;
