@@ -34,9 +34,16 @@
 }
 
 .mat-drawer-content.mat-sidenav-content{
-    margin-left: 15vw!important;
+    /* margin-left: 15vw!important; */
 }
 
 .mat-drawer.mat-drawer-side {
     width: 15vw;
+}
+
+
+.search-icon{
+    background: url(/assets/search.png) no-repeat scroll 5px 7px;
+    padding-left:30px;
+    background-size: 20px auto;
 }

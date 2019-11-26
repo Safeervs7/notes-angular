@@ -1,5 +1,5 @@
 <div class="card-wrapper">
-    <input (click)="createNote()" placeholder="Create new note" style="width: 55%; margin: 0 auto;" type="text" class="form-control">
+    <input (click)="createNote()" placeholder="Create new note" style="width: 55%; margin: 0 auto;" type="text" class="form-control pencil-icon">
     <div class="row cards">
         <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
             <app-note ng-if="1 == 0" cdkDrag class="example-box" *ngFor="let noteDetails of noteDetailsOrder" [noteDetails]=noteDetailsArray[noteDetails] [index]=noteDetails></app-note>
