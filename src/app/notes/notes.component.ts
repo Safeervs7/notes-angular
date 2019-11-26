@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import NotesService from '../services/notes.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -15,6 +15,7 @@ export class NotesComponent implements OnInit {
   categoryId: string;
   categories: { categoryName: string, notes: number[] }[] = [];
   searchValue:string;
+  @Input() isSearchValue:boolean = false;
   constructor(private router: Router, private route: ActivatedRoute, private notesService: NotesService) { 
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
@@ -22,6 +23,7 @@ export class NotesComponent implements OnInit {
   ngOnInit(){
     this.searchValue = this.notesService.getSearchValue();
     if(this.searchValue){
+      this.isSearchValue = true;
       this.noteDetailsOrder = [...this.notesService.getNotesOrder()];
       this.noteDetailsArray = [...this.notesService.getNotes(this.categoryId)];
       let newOrder = [];
@@ -33,6 +35,9 @@ export class NotesComponent implements OnInit {
       this.noteDetailsOrder = [...newOrder];
       this.notesService.setSearchValue(null);
       return;
+    }
+    else{
+      this.isSearchValue = false;
     }
     this.route.params.subscribe(paramsId => {
       this.categoryId = paramsId.id;
