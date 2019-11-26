@@ -5,9 +5,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export default class NotesService {
-  notes:{ color: string, note: string }[] = [{"note":"note 1", "color":"#fff4dc"},{"note":"note 2", "color":"#fff4dc"},{"note":"note 3", "color":"#fff4dc"},
-              {"note":"note 4", "color":"#fff4dc"},{"note":"note 5", "color":"#fff4dc"},{"note":"note 6", "color":"#fff4dc"},];
-  categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [3, 4, 5]}];
+  notes:{ color: string, note: string }[] = [{"note":"ABC", "color":"#fff4dc"},{"note":"DEF", "color":"#fff4dc"},
+                                              {"note":"GHI", "color":"#fff4dc"},{"note":"123", "color":"#fff4dc"},
+                                              {"note":"456", "color":"#fff4dc"},{"note":"789", "color":"#fff4dc"},
+                                              {"note":"random 1", "color":"#fff4dc"},{"note":"random 2", "color":"#fff4dc"},];
+  categories: { categoryName: string, notes: number[] }[] = [{categoryName: "Alphabet", notes: [0, 1, 2]}, {categoryName: "Numeric", notes: [3, 4, 5]}];
   notesOrder: number[] = [...this.range(0, this.notes.length - 1)];
   searchValue: string;
   categoryId: string;
