@@ -14,22 +14,37 @@ export class NotesComponent implements OnInit {
   noteDetailsOrder: number[];
   categoryId: string;
   categories: { categoryName: string, notes: number[] }[] = [];
+  searchValue:string;
   constructor(private router: Router, private route: ActivatedRoute, private notesService: NotesService) { 
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
 
   ngOnInit(){
+    this.searchValue = this.notesService.getSearchValue();
+    if(this.searchValue){
+      this.noteDetailsOrder = [...this.notesService.getNotesOrder()];
+      this.noteDetailsArray = [...this.notesService.getNotes(this.categoryId)];
+      let newOrder = [];
+      for(let element of this.noteDetailsOrder){
+        if(this.noteDetailsArray[element].note.includes(this.searchValue)){
+          newOrder.push(element);
+        }
+      }
+      this.noteDetailsOrder = [...newOrder];
+      this.notesService.setSearchValue(null);
+      return;
+    }
     this.route.params.subscribe(paramsId => {
       this.categoryId = paramsId.id;
     });
-    this.noteDetailsArray = this.notesService.getNotes(this.categoryId);
-    this.categories = this.notesService.getCategories();
+    this.noteDetailsArray = [...this.notesService.getNotes(this.categoryId)];
+    this.categories = [...this.notesService.getCategories()];
 
     if(this.categoryId){
       this.noteDetailsOrder = this.categories[this.categoryId].notes;
     }
     else{
-      this.noteDetailsOrder = this.notesService.getNotesOrder();
+      this.noteDetailsOrder = [...this.notesService.getNotesOrder()];
     }
   }
 

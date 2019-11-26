@@ -4,7 +4,7 @@
             <img class="img img-responsive" width="30px" src="../../assets/menu.png">
         </button>
         <h4 class="banner-note">Notes</h4>
-        <input style="width: 50%; margin: 0 auto;" placeholder="Search" type="text" class="form-control search-icon">
+        <input [(ngModel)]="searchValue" (ngModelChange)="searchNote($event)" style="width: 50%; margin: 0 auto;" placeholder="Search" type="text" class="form-control search-icon">
     </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container class="example-container">

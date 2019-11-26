@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,8 +9,17 @@ export default class NotesService {
               {"note":"note 4", "color":"red"},{"note":"note 5", "color":"red"},{"note":"note 6", "color":"red"},];
   categories: { categoryName: string, notes: number[] }[] = [{categoryName: "category1", notes: [0, 1, 2]}, {categoryName: "category2", notes: [3, 4, 5]}];
   notesOrder: number[] = [...this.range(0, this.notes.length - 1)];
+  searchValue: string;
   categoryId: string;
   constructor(private router: Router) { }
+
+  setSearchValue(value){
+    this.searchValue = value;
+  }
+
+  getSearchValue(){
+    return this.searchValue;
+  }
 
   getCategories(){
     return this.categories;
@@ -36,10 +45,6 @@ export default class NotesService {
 
   deleteNoteByIndex(id){
     for(let category of this.categories){
-      // var index = category.notes.indexOf(id);
-      // if (index !== -1){
-      //   category.notes.splice(index, 1);
-      // } 
       for(let item of category.notes){
         if(item == id){
           category.notes.splice(id, 1);

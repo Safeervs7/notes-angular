@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import NotesService from '../services/notes.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -8,10 +9,18 @@ import NotesService from '../services/notes.service';
 })
 export class LayoutComponent implements OnInit {
   categroies: { categoryName: string, notes: number[] }[] = [];
-  constructor( private notesService: NotesService ) { }
+  @Input() searchValue: string;
+  constructor( private notesService: NotesService, private router: Router,  ) { 
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit() {
     this.categroies = this.notesService.getCategories();
+  }
+
+  searchNote(){
+    this.notesService.setSearchValue(this.searchValue);
+    this.router.navigate(['/search']);
   }
 
 }
