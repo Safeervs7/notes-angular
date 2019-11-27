@@ -14,6 +14,7 @@ import { FormsModule }   from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SearchComponent } from './search/search.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SearchComponent } from './search/search.component';
     CreateNoteComponent,
     LayoutComponent,
     SearchComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,
