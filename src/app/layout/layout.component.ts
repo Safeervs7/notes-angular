@@ -20,7 +20,12 @@ export class LayoutComponent implements OnInit {
 
   searchNote(){
     this.notesService.setSearchValue(this.searchValue);
-    this.router.navigate(['/search']);
+    if(this.searchValue){
+      this.router.navigate(['/search/'+ (this.searchValue)]);
+    }
+    else{
+      this.router.navigate(['']);
+    }
   }
 
 }

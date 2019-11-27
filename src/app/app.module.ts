@@ -13,6 +13,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { FormsModule }   from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     EditNoteComponent,
     CreateNoteComponent,
     LayoutComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
