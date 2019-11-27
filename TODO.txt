@@ -1,3 +1,2 @@
 bug on delete process
-bug on search. only first change working.
 create category crud
